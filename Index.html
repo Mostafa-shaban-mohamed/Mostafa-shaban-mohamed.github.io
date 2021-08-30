@@ -13,154 +13,182 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-    <header></header>
+    <header>
+      <!-- navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Left -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a href="./Index.html">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a href="./ArticleList.html" target="_blank">Articles</a>
+                </li>
+              </ul>
+              <!-- Right -->
+              <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item active">
+                  <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/" class="nav-link" target="_blank">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a href="https://github.com/Mostafa-shaban-mohamed" class="nav-link" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
         <main role="main" class="pb-3">
           <div>
-  <!-- Intro -->
-  <div class="text-center slowAppearence" style="margin:5% 25%;">
-      <!-- Profile Image -->
-      <img src="wwwroot/img/Mostafa_Shaaban_Logo.png" style="max-width:75%; height:auto" />
-      <!-- Header h2 -->
-      <h2>Hi, I'm Mostafa Shaaban</h2>
-      <h5>.NET Full-Stack Developer</h5>
-      <br />
-      <p>
-          Self-motivated Web Developer with high level of experience working on multiple projects. Passionate and hardworking with penchant
-          for meeting deadlines. Outstanding performer in C# .NET and HTML & CSS within Web development.
-      </p>
-  </div>
-  <!-- Languages -->
-  <div class="animation-element slide-left" style="margin:20% 20%;">
-      <h1 style="text-align:center;">Languages I talk</h1>
-      <br />
-      <div class="menu-wrapper">
-          <!-- List -->
-          <ul class="menu" style="padding:0;">
-              <li class="item">C#</li>
-              <li class="item">HTML</li>
-              <li class="item">CSS</li>
-              <li class="item">JS</li>
-              <li class="item">SQL</li>
-              <li class="item">Git</li>
-              <li class="item">Java</li>
-              <li class="item">Python</li>
-              <li class="item">Shell</li>
-          </ul>
-          <!-- Arrows to move list left or right -->
-          <div class="paddles">
-              <button class="left-paddle paddle hidden">
-              </button>
-              <button class="right-paddle paddle">
-              </button>
-          </div>
-      </div>
-  </div>
-  <!-- Projects -->
-  <div class="animation-element slide-right" style="margin:20%;">
-      <h1 style="text-align:center;">My Latest Project</h1>
-      <br />
-      <div class="row align-items-center">
-          <div class="col-md-6 order-md-2">
-              <div class="mb-4 mb-md-0 d-flex justify-content-center align-items-center">
-                  <img src="wwwroot/img/SEES_Logo.png" width="300" height="220" />
-              </div>
-          </div>
-          <div class="col-md-6">
-              <h3>S.E.E.S</h3>
-              <p style="text-align:justify;">
-                  "S.E.E.S" stands for Smart Educational Environment System,
-                  which is my Graduation Project for My Senior Year. I'm Responsible for LMS of this System.
-                  A Learning Management System implements a specific e-learning process.
-                  It provides an instructor with a way to create and deliver content,
-                  monitor student participation and assess student performance.
+            <!-- Intro -->
+            <div class="text-center slowAppearence" style="margin:5% 25%;">
+              <!-- Profile Image -->
+              <img src="wwwroot/img/Mostafa_Shaaban_Logo.png" style="max-width:75%; height:auto" />
+              <!-- Header h2 -->
+              <h2>Hi, I'm Mostafa Shaaban</h2>
+              <h5>.NET Full-Stack Developer</h5>
+              <br />
+              <p>
+                Self-motivated Web Developer with high level of experience working on multiple projects. Passionate and hardworking with penchant
+                for meeting deadlines. Outstanding performer in C# .NET and HTML & CSS within Web development.
               </p>
-              <div style="margin-top:20px;">
-                  <a class="btn btn-primary" href="https://github.com/Mostafa-shaban-mohamed/Grad_Project">GitHub Repo</a>
+            </div>
+            <!-- Languages -->
+            <div class="animation-element slide-left" style="margin:20% 20%;">
+              <h1 style="text-align:center;">Languages I talk</h1>
+              <br />
+              <div class="menu-wrapper">
+                <!-- List -->
+                <ul class="menu" style="padding:0;">
+                  <li class="item">C#</li>
+                  <li class="item">HTML</li>
+                  <li class="item">CSS</li>
+                  <li class="item">JS</li>
+                  <li class="item">SQL</li>
+                  <li class="item">Git</li>
+                  <li class="item">Java</li>
+                  <li class="item">Python</li>
+                  <li class="item">Shell</li>
+                </ul>
+                <!-- Arrows to move list left or right -->
+                <div class="paddles">
+                  <button class="left-paddle paddle hidden"></button>
+                  <button class="right-paddle paddle"></button>
+                </div>
               </div>
-          </div>
-      </div>
-
-
-  </div>
-  <!-- Technologies -->
-  <div class="animation-element slide-left" style="margin:20%;">
-      <h1 style="text-align:center;">Technologies I use</h1>
-      <br />
-      <div class="row">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                      <h3 style="text-align:center;margin:25% 0;">Web Dev</h3>
+            </div>
+            <!-- Projects -->
+            <div class="animation-element slide-right" style="margin:20%;">
+              <h1 style="text-align:center;">My Latest Project</h1>
+              <br />
+              <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                  <div class="mb-4 mb-md-0 d-flex justify-content-center align-items-center">
+                    <img src="wwwroot/img/SEES_Logo.png" width="300" height="220" />
                   </div>
-                  <div class="flip-card-back">
+                </div>
+                <div class="col-md-6">
+                  <h3>S.E.E.S</h3>
+                  <p style="text-align:justify;">
+                    "S.E.E.S" stands for Smart Educational Environment System,
+                    which is my Graduation Project for My Senior Year. I'm Responsible for LMS of this System.
+                    A Learning Management System implements a specific e-learning process.
+                    It provides an instructor with a way to create and deliver content,
+                    monitor student participation and assess student performance.
+                  </p>
+                  <div style="margin-top:20px;">
+                    <a class="btn btn-primary" href="https://github.com/Mostafa-shaban-mohamed/Grad_Project">GitHub Repo</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Technologies -->
+            <div class="animation-element slide-left" style="margin:20%;">
+              <h1 style="text-align:center;">Technologies I use</h1>
+              <br />
+              <div class="row">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <h3 style="text-align:center;margin:25% 0;">Web Dev</h3>
+                    </div>
+                    <div class="flip-card-back">
                       <p>ASP.NET Framework MVC</p>
                       <p>ASP.NET Core MVC</p>
                       <p>HTML &amp; CSS &amp; JS</p>
                       <p>Responsive Web Apps</p>
                       <p>AJAX &amp; JQuery</p>
+                    </div>
                   </div>
-              </div>
-          </div>
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
+                </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
                       <h3 style="text-align:center;margin:25% 0;">Softwares</h3>
-                  </div>
-                  <div class="flip-card-back">
+                    </div>
+                    <div class="flip-card-back">
                       <p>VS</p>
                       <p>Postman</p>
                       <p>MATLAB</p>
                       <p>MS SQL Server 2014</p>
                       <p>Unity</p>
+                    </div>
                   </div>
+                </div>
               </div>
-          </div>
-      </div>
-  </div>
-  <!-- Certifications -->
-  <div class="animation-element slide-left" style="margin:20% 5%;">
-      <h1 style="text-align:center;">Certifications I have</h1>
-      <br />
-      <ul class="tilesWrap">
-          <li>
-              <h2>01</h2>
-              <h3>Udacity</h3>
-              <p>
-                  Front-End Development Track
-              </p>
-          </li>
-          <li>
-              <h2>02</h2>
-              <h3>DataCamp</h3>
-              <p>
-                  Introduction to Git
-                  SQL Server Fundamental Track
-              </p>
-          </li>
-          <li>
-              <h2>03</h2>
-              <h3>Huawei</h3>
-              <p>
-                  Cloud Computing - HCIA
-              </p>
-          </li>
-          <li>
-              <h2>04</h2>
-              <h3>LinkedIn</h3>
-              <p>
-                  Become Software Developer
-                  C# Course
-              </p>
-          </li>
-      </ul>
-
-      <!-- Seperator -->
-      <br />
-      <br />
-      <br />
-  </div>
-
+            </div>
+            <!-- Certifications -->
+            <div class="animation-element slide-left" style="margin:20% 5%;">
+              <h1 style="text-align:center;">Certifications I have</h1>
+              <br />
+              <ul class="tilesWrap">
+                <li>
+                  <h2>01</h2>
+                  <h3>Udacity</h3>
+                  <p>Front-End Development Track</p>
+                </li>
+                <li>
+                  <h2>02</h2>
+                  <h3>DataCamp</h3>
+                  <p>
+                    Introduction to Git
+                    SQL Server Fundamental Track
+                  </p>
+                </li>
+                <li>
+                  <h2>03</h2>
+                  <h3>Huawei</h3>
+                  <p>Cloud Computing - HCIA</p>
+                </li>
+                <li>
+                  <h2>04</h2>
+                  <h3>LinkedIn</h3>
+                  <p>
+                    Become Software Developer
+                    C# Course
+                  </p>
+                </li>
+              </ul>
+              <!-- Seperator -->
+              <br />
+              <br />
+              <br />
+            </div>
           </div>
         </main>
     </div>
