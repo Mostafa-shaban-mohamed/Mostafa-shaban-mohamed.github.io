@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>.NET Core Vs .NET Framework: Which To Choose</title>
+      <link rel="stylesheet" href="../wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <script src="https://kit.fontawesome.com/f1a3772513.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../wwwroot/css/articles.css" />
+      <link rel="apple-touch-icon" sizes="180x180" href="../wwwroot/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../wwwroot/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../wwwroot/favicon-16x16.png">
+      <link rel="manifest" href="../wwwroot/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <!-- navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar">
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Left -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a href="../Index.html">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a href="../ArticleList.html" target="_blank">Articles</a>
+                </li>
+              </ul>
+              <!-- Right -->
+              <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item active">
+                  <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/" class="nav-link" target="_blank">
+                    <i style="color:black;" class="fab fa-linkedin-in fa-2x"></i>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a href="https://github.com/Mostafa-shaban-mohamed" class="nav-link" target="_blank">
+                    <i style="color:black;" class="fab fa-github fa-2x"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+      <main role="main" class="pb-3">
+        <div style="margin:8% 10%;">
+          <h2>.NET Core Vs .NET Framework: Which To Choose</h2>
+          <br />
+          <p style="font-size:15px;">6 September 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="image" style="margin:5%;">
+            <img src="../wwwroot/img/CoreVSFramework.png"
+            alt="Core Vs Framework"
+            style="max-width:75%; height:auto; text-align:center;"/>
+          </div>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>Introduction</h3>
+            <p>
+              There are two implementation of .NET platform for building Web applications:
+              <ul>
+                <li>.NET Framework (.NET 4.8)</li>
+                <li>.NET Core (.NET 5+)</li>
+              </ul>
+              They may be share the same components and codes, but there are different from each other in configuration,
+              operating systems and more fundamental staff that we will explain some of them in this article.
+              It is your choice to decide which one of them is suitable for your apps and projects.
+            </p>
+            <h4>.NET Framework:</h4>
+            <p>
+              It is framework that supports only windows operating system and any application that runs on it.
+              It supports building apps using Windows Forms,
+              WPF (Windows Presentation Foundation is a UI framework that creates desktop client applications.)
+              and UWP (Universal Windows Platform provides a common app platform on every device that runs Windows 10).
+            </p>
+            <h4>.NET Core:</h4>
+            <p>
+              It is new open source and cross-platform framework to build and run applications for all operating systems (Windows, Linux and Mac).
+              There are versions of UWP and ASP.NET in core called UWP Core API and ASP.NET Core respectively.
+            </p>
+            <p>
+              Still yet, you probably don’t know when to choose .NET core or .NET framework.
+              We will help with this by showing pros and cons of each and conditions to choose each of them,
+              but you will be the one who takes the final decision.
+            </p>
+            <h3>Developers choose .NET Framework When ....</h3>
+            <h4>Current .NET Framework applications:</h4>
+            <p>
+              Before you jump to migrating a current .NET framework applications
+              to .NET core, here is a better approach, you can you .NET core in
+              the extension of this application if there is any additional features needed,
+              but except that don’t migrate the application to .NET core.
+              The thing about .NET Core that it is a higher version of framework which means
+               it supports the older versions and can adapt to them.
+            </p>
+            <h4> Third party libraries or technologies that doesn’t support .NET Core 5:</h4>
+            <p>
+              As .NET Core is the new version, every library tries to have a Core
+              version such as Entity framework Core & UWP Core. But yet, there still
+               a lot of work needed to move all .NET framework libraries to .Net Core.
+               And even after release of Core version their still some issues to be
+               handled like that in Entity framework Core.
+            </p>
+            <h4>Use some Platforms that doesn’t support .NET Core 5:</h4>
+            <p>
+              Some Azure Services doesn’t support .NET Core yet,
+              it is planned to in later versions (.NET Core 6+)
+              but not at the moment. So it is a smart decision to use
+              .NET framework.
+            </p>
+            <h4>Want to use some technologies not available in .NET Core 5:</h4>
+            <p>
+              ASP.NET Core can’t be used for ASP.NET Web Forms, Web Pages, WF and even F# and VB are not supported in all projects templates of .NET Core.
+              Simply, .NET Framework is better if:
+              <ul>
+                <li>You don’t have time to learn new technology.</li>
+                <li>Need stable and well supported environment to work.</li>
+                <li>Don’t want to upgrade or migrate to new system or environment.</li>
+                <li>Build windows client applications using Windows Form or WPF.</li>
+              </ul>
+            </p>
+            <h3>Developers choose .NET Core 5 when ....</h3>
+            <h4>Cross-platform is needed:</h4>
+            <p>
+              One of my favourite feature in .NET Core 5 is the ability
+              to build and run on any operating syste, which doesn’t make
+              it tied to windows and Microsoft only. It will help it
+              spread in development world faster. Microsoft tools such
+              as Visual Studio Code is also cross-platform tool which make
+              it even better and easier to develop in non-windows environment.
+            </p>
+            <h4>Microservices architecture is used:</h4>
+            <p>
+              Simply, Microservices is a service that allows multiple of services
+              to run individually but still connected to each other. Microsoft knew
+               this will be the future because of multiple benefits for
+               enterprises and developers, that’s why .NET core 5+ supports this
+               services and supports its technologies and tools such
+               as Azure Services Fabrics and Azure App Services.
+            </p>
+            <h4>Docker containers are used:</h4>
+            <p>
+              Containers are used in presence of Microservices architecture.
+              .Net framework can use Windows containers, but if you want a
+              light-weight and modular service then .NET Core is a better choice,
+              because it’s cross-platform. You can deploy server apps to
+              Linux Docker containers on Azure Kubernetes Services which can manage
+              and scale container–based apps on Azure Cloud.
+            </p>
+            <h4>High performance and Scalable systems are required:</h4>
+            <p>
+              As we said earlier, .NET Core 5+ is cross-platform and
+              light-weighted framework, which makes it the best choice for
+              applications that requires high performance and scalability. A
+              lower number of servers and virtual machines are required when using
+              .NET Core. Plus as mentioned before, it is better choice for
+              Microservices and Containers.
+            </p>
+            <h3>Upcoming Ship Dates for .NET Core:</h3>
+            <p>
+              <ul>
+                <li>.NET Core 3.1x (servicing): LTS (Long Term Support) release. Approximately every 1-2 months or as needed.</li>
+                <li>.NET 5.0 (servicing): Current release. Approximately every 1-2 months or as needed.</li>
+                <li>.NET 6.0: LTS (Long Term Support) release, scheduled for November 2021.</li>
+                <li>.NET 7.0: Release scheduled for November 2022.</li>
+                <li>.NET 8.0: LTS (Long Term Support) release, scheduled for November 2023.</li>
+              </ul>
+            </p>
+            <h3>Summary</h3>
+            <p>
+              The debate on .NET Core and .NET Framework shows the differences
+              between the two platforms. But we are not here to tell you which
+              is better for you, this choice is for you to decide. Both platforms
+              still available and there are a lot of tutorials, courses and project
+              online free and paid.
+            </p>
+            <p>
+              .NET framework will have no further new versions,
+              while .NET Core will. On the other hand, .NET Core is still
+              new and will probably have a lot of issues, fixes and updates,
+              while .NET Framework is well grown and widely used in software
+              development world. But evaluation is coming whether we like it or
+              not. But it doesn’t mean .Net Framework will extinct, not even soon.
+              The choice is yours.
+            </p>
+            <h3>Reference</h3>
+            <p>
+              <ul>
+                <li><a href="https://www.c-sharpcorner.com/article/difference-between-net-framework-and-net-core/" >https://www.c-sharpcorner.com/article/difference-between-net-framework-and-net-core/</a></li>
+                <li><a href="https://docs.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server">https://docs.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server</a></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="border-top footer">
+        <div class="container">
+            <div style="margin: 5%">
+                <h3 class="footer-Text">To Contact Me:</h3>
+                <ul style="list-style:none;margin:0;padding:0;overflow:hidden;">
+                    <li class="li-myList"><a href="mailto:MostafaShaban4522912@gmail.com"><i class="fab fa-google fa-2x"></i></a></li>
+                    <li class="li-myList"><a href="https://github.com/Mostafa-shaban-mohamed"><i class="fab fa-github fa-2x"></i></a></li>
+                    <li class="li-myList"><a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+
+            <p class="footer-Text">&copy; 2021 - Mostafa Shaaban. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
