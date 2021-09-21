@@ -12,10 +12,11 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        
+
         gtag('config', 'G-C9HPHQ9S5V');
     </script>
     <link rel="stylesheet" href="wwwroot/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="wwwroot/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="wwwroot/favicon-16x16.png">
@@ -23,97 +24,105 @@
 </head>
 <body>
     <header>
-      <!-- navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-
-            <!-- Collapse -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- Left -->
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a href="./Index.html">Home
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a href="./ArticleList.html" target="_blank">Articles</a>
-                </li>
-              </ul>
-              <!-- Right -->
-              <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item active">
-                  <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/" class="nav-link" target="_blank">
-                    <i class="fab fa-linkedin-in fa-2x"></i>
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a href="https://github.com/Mostafa-shaban-mohamed" class="nav-link" target="_blank">
-                    <i class="fab fa-github fa-2x"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-        </nav>
+        <div class="topnav" id="myTopnav">
+          <a class="active" onclick="loadHomeOnClick()">Home
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+          <a onclick="loadArticleOnClick()">
+            Articles
+            <i class="fa fa-book"></i>
+          </a>
+          <div class="right-lnk">
+            <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"
+            target="_blank" class="nav-link" target="_blank">
+              LinkedIn
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Mostafa-shaban-mohamed"
+            class="nav-link" target="_blank">
+              GitHub
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <a class="icon" onclick="myFunction();">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div id="container" class="container">
+        <main id="CV" role="main" class="pb-3">
           <div>
             <!-- Intro -->
-            <div class="text-center slowAppearence" style="margin:5% 25%;">
+            <div style="margin-top: 5px;" class="text-center slowAppearence CV-Blocks">
               <!-- Profile Image -->
-              <img src="wwwroot/img/Mostafa_Shaaban_Logo.png" style="max-width:75%; height:auto" />
+              <img src="wwwroot/img/Mostafa_Shaaban_Logo.png" class="img-fluid" style="max-width:75%; height:auto;" />
               <!-- Header h2 -->
-              <h2>Hi, I'm Mostafa Shaaban</h2>
+              <div class="wrapper">
+                <h2 class="typing-demo">Hi, I'm Mostafa Shaaban</h2>
+              </div>
               <h5>.NET Full-Stack Developer</h5>
               <br />
-              <p>
+              <p class="text-grey">
                 Self-motivated Web Developer with high level of experience working on multiple projects. Passionate and hardworking with penchant
                 for meeting deadlines. Outstanding performer in C# .NET and HTML & CSS within Web development.
               </p>
             </div>
             <!-- Languages -->
-            <div class="animation-element slide-left" style="margin:20% 20%;">
-              <h1 style="text-align:center;">Languages I talk</h1>
-              <br />
-              <div class="menu-wrapper">
+            <div class="animation-element slide-left CV-Blocks">
+              <h1 style="text-align:center;">Languages</h1>
+              <br/>
+              <div>
                 <!-- List -->
-                <ul class="menu" style="padding:0;">
-                  <li class="item">C#</li>
-                  <li class="item">HTML</li>
-                  <li class="item">CSS</li>
-                  <li class="item">JS</li>
-                  <li class="item">SQL</li>
-                  <li class="item">Git</li>
-                  <li class="item">Java</li>
-                  <li class="item">Python</li>
-                  <li class="item">Shell</li>
+                <ul class="fade-in-text text-grey" style="padding:0;">
+                  <li>C#</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JS</li>
+                  <li>SQL</li>
+                  <li>ReactJS</li>
+                  <li>Git</li>
+                  <li>Shell</li>
+                  <li>Java</li>
+                  <li>Python</li>
                 </ul>
-                <!-- Arrows to move list left or right -->
-                <div class="paddles">
-                  <button class="left-paddle paddle hidden"></button>
-                  <button class="right-paddle paddle"></button>
-                </div>
               </div>
             </div>
             <!-- Projects -->
-            <div class="animation-element slide-right" style="margin:20%;">
+            <div class="animation-element slide-right CV-Blocks">
               <h1 style="text-align:center;">My Latest Project</h1>
               <br />
-              <div class="row align-items-center">
+              <!-- Latest React Project -->
+              <div class="row align-items-center card-block">
                 <div class="col-md-6 order-md-2">
                   <div class="mb-4 mb-md-0 d-flex justify-content-center align-items-center">
-                    <img src="wwwroot/img/SEES_Logo.png" width="300" height="220" />
+                    <img src="wwwroot/img/MyReview_Logo.png" class="img-thumbnail" width="300" height="220" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h3>MyReview</h3>
+                  <p class="text-grey" style="text-align:justify;">
+                    My Review is web application help you reach to others reviews on product
+                    and others to reach your review as well. this project is developed using REACTJS
+                     & ASP.NET Core 5.
+                  </p>
+                  <div style="margin-top:20px;">
+                    <a class="btn btn-primary" href="https://github.com/Mostafa-shaban-mohamed/MyReviewProject">GitHub Repo</a>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <br />
+              <!-- Graduation Project -->
+              <div class="row align-items-center card-block">
+                <div class="col-md-6 order-md-2">
+                  <div class="mb-4 mb-md-0 d-flex justify-content-center align-items-center">
+                    <img src="wwwroot/img/SEES_Logo.png" class="img-thumbnail" width="280" height="220" />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <h3>S.E.E.S</h3>
-                  <p style="text-align:justify;">
+                  <p class="text-grey" style="text-align:justify;">
                     "S.E.E.S" stands for Smart Educational Environment System,
                     which is my Graduation Project for My Senior Year. I'm Responsible for LMS of this System.
                     A Learning Management System implements a specific e-learning process.
@@ -126,44 +135,73 @@
                 </div>
               </div>
             </div>
-            <!-- Technologies -->
-            <div class="animation-element slide-left" style="margin:20%;">
-              <h1 style="text-align:center;">Technologies I use</h1>
+            <!-- Articles -->
+            <div class="animation-element slide-right CV-Blocks">
+              <h1 style="text-align:center;">My Latest Articles</h1>
               <br />
-              <div class="row">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <h3 style="text-align:center;margin:25% 0;">Web Dev</h3>
-                    </div>
-                    <div class="flip-card-back">
-                      <p>ASP.NET Framework MVC</p>
-                      <p>ASP.NET Core MVC</p>
-                      <p>HTML &amp; CSS &amp; JS</p>
-                      <p>Responsive Web Apps</p>
-                      <p>AJAX &amp; JQuery</p>
-                    </div>
+              <!-- Latest article -->
+              <div class="row align-items-center card-block">
+                <div class="col-md-6 order-md-2">
+                  <div class="mb-4 mb-md-0 d-flex justify-content-center align-items-center">
+                    <img src="wwwroot/img/CoreVSFramework.png" class="img-thumbnail" width="300" height="220" />
                   </div>
                 </div>
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <h3 style="text-align:center;margin:25% 0;">Softwares</h3>
-                    </div>
-                    <div class="flip-card-back">
-                      <p>VS</p>
-                      <p>Postman</p>
-                      <p>MATLAB</p>
-                      <p>MS SQL Server 2014</p>
-                      <p>Unity</p>
-                    </div>
+                <div class="col-md-6">
+                  <h3>.NET Core Vs .NET Framework: Which To Choose</h3>
+                  <p class="text-grey" style="text-align:justify;">
+                    There are two implementation of .NET platform for building Web applications:
+                    .NET Framework (.NET 4.8)
+                    .NET Core (.NET 5+)
+                    They may be share the same components and codes, but there are different
+                    from each other in configuration, operating systems and more fundamental
+                    staff that we will explain some of them in this article.
+                    It is your choice to decide which one of them is suitable for your apps
+                     and projects.....
+                  </p>
+                  <div style="margin-top:20px;">
+                    <a class="btn btn-primary" href="https://mostafa-shaban-mohamed.github.io/ArticlesPages/6September2021.html">Read More</a>
+                    <a class="btn btn-primary" href="#" onclick="loadArticleOnClick()">See Articles</a>
                   </div>
+                </div>
+              </div>
+              <br />
+              <br />
+            </div>
+            <!-- Technologies -->
+            <div class="animation-element slide-left CV-Blocks">
+              <h1 style="text-align:center;">Technologies</h1>
+              <br />
+              <div class="card-block tech-card">
+                <div>
+                  <h3 style="text-align:center;margin:5% 0;">Web Dev</h3>
+                </div>
+                <div class="text-grey">
+                  <p>ASP.NET Framework MVC</p>
+                  <p>ASP.NET Core MVC</p>
+                  <p>HTML &amp; CSS &amp; JS</p>
+                  <p>ReactJS</p>
+                  <p>Responsive Web Apps</p>
+                  <p>AJAX &amp; JQuery</p>
+                </div>
+              </div>
+              <div class="card-block tech-card">
+                <div>
+                  <h3 style="text-align:center;margin:5% 0;">Softwares</h3>
+                </div>
+                <div class="text-grey">
+                  <p>Visual Studio</p>
+                  <p>Postman</p>
+                  <p>MATLAB</p>
+                  <p>MS SQL Server 2014</p>
+                  <p>Unity</p>
+                  <p>Atom</p>
+                  <p>Git Command</p>
                 </div>
               </div>
             </div>
             <!-- Certifications -->
-            <div class="animation-element slide-left" style="margin:20% 5%;">
-              <h1 style="text-align:center;">Certifications I have</h1>
+            <div class="animation-element slide-left CV-Blocks">
+              <h1 style="text-align:center;">Certification</h1>
               <br />
               <ul class="tilesWrap">
                 <li>
@@ -176,20 +214,53 @@
                   <h3>DataCamp</h3>
                   <p>
                     Introduction to Git
-                    SQL Server Fundamental Track
                   </p>
                 </li>
                 <li>
                   <h2>03</h2>
+                  <h3>DataCamp</h3>
+                  <p>
+                    SQL Server Fundamental Track
+                  </p>
+                </li>
+                <li>
+                  <h2>04</h2>
+                  <h3>DataCamp</h3>
+                  <p>
+                    Introduction to Shell
+                  </p>
+                </li>
+                <li>
+                  <h2>05</h2>
                   <h3>Huawei</h3>
                   <p>Cloud Computing - HCIA</p>
                 </li>
                 <li>
-                  <h2>04</h2>
+                  <h2>06</h2>
                   <h3>LinkedIn</h3>
                   <p>
-                    Become Software Developer
-                    C# Course
+                    Web Security
+                  </p>
+                </li>
+                <li>
+                  <h2>07</h2>
+                  <h3>LinkedIn</h3>
+                  <p>
+                    JavaScript
+                  </p>
+                </li>
+                <li>
+                  <h2>08</h2>
+                  <h3>LinkedIn</h3>
+                  <p>
+                    CSharp
+                  </p>
+                </li>
+                <li>
+                  <h2>09</h2>
+                  <h3>LinkedIn</h3>
+                  <p>
+                    HTML & CSS
                   </p>
                 </li>
               </ul>
@@ -197,6 +268,38 @@
               <br />
               <br />
               <br />
+            </div>
+          </div>
+        </main>
+        <main style="display:none;" id="list" role="main" class="pb-3">
+          <div>
+            <!-- ArticleList -->
+            <div style="margin-top: 5px;" class="slowAppearence CV-Blocks">
+              <h1 style="text-align:center;">Article List</h1>
+              <br/>
+              <div>
+                  <ul style="list-style:none;padding-left:0;">
+                    <li>
+                      <div class="card-block tech-card">
+                        <h3 style="color:white;">How to Become ASP.NET Web Developer</h3>
+                        <p class="text-grey">In the world of web development,
+                          there are many frameworks and languages used to build web applications.
+                          Each of those frameworks have features and requirements of software tools and IDEs.
+                          In this article, we will discuss ASP.NET and how to be ASP.NET web developer
+                          . . . <a href="./ArticlesPages/30August2021.html">READ MORE</a></p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="card-block tech-card">
+                        <h3 style="color:white;">.NET Core Vs .NET Framework: Which To Choose</h3>
+                        <p class="text-grey">They may be share the same components and codes,
+                          but there are different from each other in configuration,
+                          operating systems and more fundamental staff that we will explain some of them in this article.
+                          . . . <a href="./ArticlesPages/6September2021.html">READ MORE</a></p>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
             </div>
           </div>
         </main>
@@ -221,114 +324,121 @@
     <script src="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="wwwroot/js/site.js" asp-append-version="true"></script>
     <script>
-            $(document).ready(function () {
-                // duration of scroll animation
-                var scrollDuration = 600;
-                // paddles
-                var leftPaddle = document.getElementsByClassName('left-paddle');
-                var rightPaddle = document.getElementsByClassName('right-paddle');
-                // get items dimensions
-                var itemsLength = $('.item').length;
-                var itemSize = $('.item').outerWidth(true);
-                // get some relevant size for the paddle triggering point
-                var paddleMargin = 10;  //20
+      //navbar collapse
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
 
-                // get wrapper width
-                var getMenuWrapperSize = function () {
-                    return $('.menu-wrapper').outerWidth();
-                }
-                var menuWrapperSize = getMenuWrapperSize();
-                // the wrapper is responsive
-                $(window).on('resize', function () {
-                    menuWrapperSize = getMenuWrapperSize();
-                });
-                // size of the visible part of the menu is equal as the wrapper size
-                var menuVisibleSize = menuWrapperSize;
+      function loadHomeOnClick(){
+        $("#CV").show();
+        $("#list").hide();
+      }
 
-                // get total width of all menu items
-                var getMenuSize = function () {
-                    return itemsLength * itemSize;
-                };
-                var menuSize = getMenuSize();
-                // get how much of menu is invisible
-                var menuInvisibleSize = menuSize - menuWrapperSize;
+      function loadArticleOnClick(){
+        $("#CV").hide();
+        $("#list").show();
+      }
 
-                // get how much have we scrolled to the left
-                var getMenuPosition = function () {
-                    return $('.menu').scrollLeft();
-                };
+      $(document).ready(function () {
+        // duration of scroll animation
+        var scrollDuration = 600;
+        // paddles
+        var leftPaddle = document.getElementsByClassName('left-paddle');
+        var rightPaddle = document.getElementsByClassName('right-paddle');
+        // get items dimensions
+        var itemsLength = $('.item').length;
+        var itemSize = $('.item').outerWidth(true);
+        // get some relevant size for the paddle triggering point
+        var paddleMargin = 10;  //20
+        // get wrapper width
+        var getMenuWrapperSize = function () {
+          return $('.menu-wrapper').outerWidth();
+        }
+        var menuWrapperSize = getMenuWrapperSize();
+        // the wrapper is responsive
+        $(window).on('resize', function () {
+           menuWrapperSize = getMenuWrapperSize();
+        });
+        // size of the visible part of the menu is equal as the wrapper size
+        var menuVisibleSize = menuWrapperSize;
+        // get total width of all menu items
+        var getMenuSize = function () {
+           return itemsLength * itemSize;
+        };
+        var menuSize = getMenuSize();
+        // get how much of menu is invisible
+        var menuInvisibleSize = menuSize - menuWrapperSize;
+        // get how much have we scrolled to the left
+        var getMenuPosition = function () {
+            return $('.menu').scrollLeft();
+        };
+        // finally, what happens when we are actually scrolling the menu
+        $('.menu').on('scroll', function () {
+          // get how much of menu is invisible
+          menuInvisibleSize = menuSize - menuWrapperSize;
+          // get how much have we scrolled so far
+          var menuPosition = getMenuPosition();
+          var menuEndOffset = menuInvisibleSize - paddleMargin;
+          // show & hide the paddles
+          // depending on scroll position
+          if (menuPosition <= paddleMargin) {
+            $(leftPaddle).addClass('hidden');
+            $(rightPaddle).removeClass('hidden');
+          } else if (menuPosition < menuEndOffset) {
+            // show both paddles in the middle
+            $(leftPaddle).removeClass('hidden');
+            $(rightPaddle).removeClass('hidden');
+          } else if (menuPosition >= menuEndOffset) {
+            $(leftPaddle).removeClass('hidden');
+            $(rightPaddle).addClass('hidden');
+          }
+          // print important values
+          $('#print-wrapper-size span').text(menuWrapperSize);
+          $('#print-menu-size span').text(menuSize);
+          $('#print-menu-invisible-size span').text(menuInvisibleSize);
+          $('#print-menu-position span').text(menuPosition);
+        });
+        // scroll to left
+        $(rightPaddle).on('mouseenter', function () {
+          $('.menu').animate({ scrollLeft: menuInvisibleSize }, scrollDuration);
+        });
+        // scroll to right
+        $(leftPaddle).on('mouseenter', function () {
+          $('.menu').animate({ scrollLeft: '0' }, scrollDuration);
+        });
+        // on Scrolling effect
+        var $animation_elements = $('.animation-element');
+        var $window = $(window);
 
-                // finally, what happens when we are actually scrolling the menu
-                $('.menu').on('scroll', function () {
+        function check_if_in_view() {
+          var window_height = $window.height();
+          var window_top_position = $window.scrollTop();
+          var window_bottom_position = (window_top_position + window_height);
 
-                    // get how much of menu is invisible
-                    menuInvisibleSize = menuSize - menuWrapperSize;
-                    // get how much have we scrolled so far
-                    var menuPosition = getMenuPosition();
+          $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = (element_top_position + element_height);
 
-                    var menuEndOffset = menuInvisibleSize - paddleMargin;
+          //check to see if this current container is within viewport
+          if ((element_bottom_position >= window_top_position) &&
+            (element_top_position <= window_bottom_position)) {
+            $element.addClass('in-view');
+          } else {
+            $element.removeClass('in-view');
+          }
+        });
+      }
 
-                    // show & hide the paddles
-                    // depending on scroll position
-                    if (menuPosition <= paddleMargin) {
-                        $(leftPaddle).addClass('hidden');
-                        $(rightPaddle).removeClass('hidden');
-                    } else if (menuPosition < menuEndOffset) {
-                        // show both paddles in the middle
-                        $(leftPaddle).removeClass('hidden');
-                        $(rightPaddle).removeClass('hidden');
-                    } else if (menuPosition >= menuEndOffset) {
-                        $(leftPaddle).removeClass('hidden');
-                        $(rightPaddle).addClass('hidden');
-                    }
-
-                    // print important values
-                    $('#print-wrapper-size span').text(menuWrapperSize);
-                    $('#print-menu-size span').text(menuSize);
-                    $('#print-menu-invisible-size span').text(menuInvisibleSize);
-                    $('#print-menu-position span').text(menuPosition);
-
-                });
-
-                // scroll to left
-                $(rightPaddle).on('mouseenter', function () {
-                    $('.menu').animate({ scrollLeft: menuInvisibleSize }, scrollDuration);
-                });
-
-                // scroll to right
-                $(leftPaddle).on('mouseenter', function () {
-                    $('.menu').animate({ scrollLeft: '0' }, scrollDuration);
-                });
-
-                // on Scrolling effect
-                var $animation_elements = $('.animation-element');
-                var $window = $(window);
-
-                function check_if_in_view() {
-                    var window_height = $window.height();
-                    var window_top_position = $window.scrollTop();
-                    var window_bottom_position = (window_top_position + window_height);
-
-                    $.each($animation_elements, function () {
-                        var $element = $(this);
-                        var element_height = $element.outerHeight();
-                        var element_top_position = $element.offset().top;
-                        var element_bottom_position = (element_top_position + element_height);
-
-                        //check to see if this current container is within viewport
-                        if ((element_bottom_position >= window_top_position) &&
-                            (element_top_position <= window_bottom_position)) {
-                            $element.addClass('in-view');
-                        } else {
-                            $element.removeClass('in-view');
-                        }
-                    });
-                }
-
-                $window.on('scroll resize', check_if_in_view);
-                $window.trigger('scroll', check_if_in_view);
-            });
-    </script>
-
+      $window.on('scroll resize', check_if_in_view);
+      $window.trigger('scroll', check_if_in_view);
+    });
+  </script>
 </body>
 </html>
