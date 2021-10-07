@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>SOLID Principle</title>
+      <link rel="stylesheet" href="../wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <script src="https://kit.fontawesome.com/f1a3772513.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../wwwroot/css/articles.css" />
+      <link rel="apple-touch-icon" sizes="180x180" href="../wwwroot/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../wwwroot/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../wwwroot/favicon-16x16.png">
+      <link rel="manifest" href="../wwwroot/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <!-- navbar -->
+
+        <div class="topnav" id="myTopnav">
+          <a class="active" href="../Index.html">Home
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+          <a href="../Index.html">
+            Articles
+            <i class="fa fa-book"></i>
+          </a>
+          <div class="right-lnk">
+            <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"
+            target="_blank" class="nav-link" target="_blank">
+              LinkedIn
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Mostafa-shaban-mohamed"
+            class="nav-link" target="_blank">
+              GitHub
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <a class="icon" onclick="myFunction();">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
+    </header>
+    <div>
+      <ul id="SOLID_menu">
+        <li onclick="loadOverViewOnClick()">Overview</li>
+        <li onclick="loadSRPOnClick()">Single Responsibility Prinicple</li>
+        <li onclick="loadOCPOnClick()">Open-Closed Principle</li>
+        <li onclick="loadLSPOnClick()">Liskov Substitution Principle</li>
+        <li onclick="loadISPOnClick()">Interface Segregation Principle</li>
+        <li onclick="loadDIPOnClick()">Dependency Inversion Principle</li>
+      </ul>
+    </div>
+    <div class="container">
+      <main id="Overview" role="main" class="pb-3">
+        <div style="margin:8% 15%;">
+          <h2>Overview of SOLID Principle</h2>
+          <br />
+          <p style="font-size:15px;">7 October 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>Introduction</h3>
+            <p>In this article series, we will discuss the SOLID Principles with examples in C# (.NET), and the reason it is essential for developer in real world.</p>
+            <p>The SOLID Design Principles is design principle which helps solve many of software design problems. It provides a multiple ways to tightly software components which makes software design more sustainable and understandable.</p>
+            <p>Let’s say for example, you as developer start developing an application (Web app). Overtime it starts to get bigger and has more components. With so success, you start to add more features and code starts to get missy. After adding some features, it become harder for you to get a job done, even if it is simple one. At the same time you can’t just stop adding feature as requested or stop developing your application. Then who’s to blame? It’s the software design of application.</p>
+            <p>With SOLID Principles, you won’t get this problem above. It will help achieve the right design for application without worrying about adding features to application.</p>
+            <h3>Advantages of SOLID Principles</h3>
+            <h4>Maintainability</h4>
+            <p>
+              With the growth that we see every day, you need to design your application with the ability to expand and grow. To have the ability to add features without making everything fail apart.
+            </p>
+            <h4>Testability</h4>
+            <p>
+              In aspect of this growth, you need to test your application to fetch a possible or existing bugs and problems. But with nowadays, it’s hard to test the whole application at once, it will be hard to detect the problem and fix it. So you need to have a design for your application to help you test each component or part individually. That makes it easier and faster to detect and fix the problem.
+            </p>
+            <h4>Flexibility and Extensibility</h4>
+            <p>
+              In the enterprise applications, you will need flexibility to make application work in different ways and in different environments. Also need to add extensions for new features to applications in different environments.
+            </p>
+            <h4>Parallel Development</h4>
+            <p>
+              When you work in a team or group, you will find it impossible that the whole team work in the same module or on same component. So you need a software design that helps the team member to work at their modules without worrying about effecting the others or their work.
+            </p>
+            <h3>Main Reasons for Most of the Software Failures:</h3>
+            <p>
+              <ul>
+                <li>Putting a lot of functionalities in classes even though it isn’t related to the classes.</li>
+                <li>Make classes dependent on each other, which make it harder to make changes for any of them (change in one affect the others).</li>
+              </ul>
+            </p>
+            <h3>Overcome the Software Failures</h3>
+            <p>
+              <ul>
+                <li>Choose the correct Software architecture (i.e. MVC, Layered, 3-tier …).</li>
+                <li>Follow SOLID Principles.</li>
+                <li>Choose the correct design pattern (Abstract Factory, Singleton …).</li>
+              </ul>
+            </p>
+            <h3>SOLID Acronym</h3>
+            <p>
+              <ul>
+                <li>S stands for “Single Responsibility Principle” which is known as SRP.</li>
+                <li>O stands for “Open-Closed Principle” which is known as OSP.</li>
+                <li>L stands for “Liskov Substitution Principle” which is known as LSP.</li>
+                <li>I stands for “Interface Segregation Principle” which is known as ISP.</li>
+                <li>D stands for “Dependency Inversion Principle” which is known as DIP.</li>
+              </ul>
+            </p>
+            <p>
+              In this article series, I am going to cover all the features of <strong>SOLID Design Principles in C#</strong> with examples. You will learn from the basic and advance level features of SOLID Design Principles in C# with Examples as we progress
+            </p>
+            <p>Here is the code used in this series: <a href="https://github.com/Mostafa-shaban-mohamed/SOLID-Principles-Examples">GitHub Repo</a></p>
+          </div>
+        </div>
+      </main>
+      <main id="SRP" role="main" style="display:none;" class="pb-3">
+        <div style="margin:8% 15%;">
+          <h2>Single Responsibility Principle (SRP)</h2>
+          <br />
+          <p style="font-size:15px;">7 October 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>The Definition</h3>
+            <p>The Single Responsibility Principle states as “Each Software Component or Module should have only one reason to change”. This means that each class or module should have only on responsibility, task or purpose to serve. That doesn’t mean the class must have on property or method, it can have multiple members (method & properties) as long as they serve the single responsibility. This helps get cleaner and easier code.</p>
+            <h3>Advantages of SRP</h3>
+            <h4>Reduce Complexity of Code</h4>
+            <p>It helps get smaller and easy-to-read classes, because ever member serve the same purpose which is the responsibility of class.</p>
+            <h4>Increase Maintenance of Code</h4>
+            <p>As each method has a single functionality so it is easy to read and maintain.</p>
+            <h4>Testability</h4>
+            <p>As the class has single functionality, it can be individually tested and fix problem easier.</p>
+            <h3>C# (.NET) Example</h3>
+            <p>For beginners, let’s keep it as simple as possible, let’s say we have pizza shop, and it has three functionality; taking order, calculate the bill and delivery of order. Also don’t forget the customer class which include the info about customer. First, create customer class:</p>
+            <pre>
+              <code>
+                class Customers
+                {
+                  public String name { set; get; }
+                  public String address { set; get; }
+                }
+              </code>
+            </pre>
+            <p>then create orders class which is responsible for preparing order only:</p>
+            <pre>
+              <code>
+                class Orders
+                {
+                  public Customers customer { set; get; }
+                  private String orderId { set;  get; }
+                  private String itemName { set;  get; }
+                  public int quantity { set; get; }
+                  public int totalBillAmt { set; get; }
+
+                  public String getOrderId() { return orderId; }
+                  public void setOrderId(String orderId)
+                  {
+                    Random random = new Random();
+                    this.orderId = orderId + "-" + random.Next(500);
+                  }
+                  public String getItemName() { return itemName; }
+                  public void setItemName(String itemName)
+                  {
+                    this.itemName = itemName;
+                    setOrderId(itemName);
+                  }
+                  public void prepareOrder()
+                  {
+                    Console.WriteLine("Preparing order for customer -"
+                                 + this.customer.name
+                                 + " who has ordered "
+                                 + this.getItemName());
+                  }
+                }
+              </code>
+            </pre>
+            <p>In above class, we created five properties (3 public & 2 private). For private properties, we created get and set methods for them. Don’t worry the code is simple and easy to read. Finally we created the method responsible for preparing order. After that we created class responsible for billing</p>
+            <pre>
+              <code>
+                class BillCalculation
+                {
+                  private Orders order;
+                  public BillCalculation(Orders order)
+                  {
+                    this.order = order;
+                  }
+
+                  public void calculateBill()
+                  {
+                    /* In the real world, we would want a kind of lookup
+                    functionality implemented here where we look for
+                    the price of each item included in the order, add
+                    them up and add taxes, delivery charges, etc on
+                    top to reach the total price. We will simulate
+                    this behaviour here, by generating a random number
+                    for total price.
+                    */
+                    Random rand = new Random();
+                    int totalAmt
+                    = rand.Next(200) * this.order.quantity;
+
+                    this.order.totalBillAmt = totalAmt;
+                    Console.WriteLine("Order with order id  "
+                                 + this.order.getOrderId()
+                                 + " has a total bill amount of "
+                                 + this.order.totalBillAmt);
+                    }
+                  }
+              </code>
+            </pre>
+            <p>It starts with calling the order then make the calculations. Of course in real world this isn’t the correct calculations. But as I said earlier, we will make it simple. Delivery class which responsible for delivery of order</p>
+            <pre>
+              <code>
+                class Delivery
+                {
+                  private Orders order;
+                  public Delivery(Orders order) {
+                    this.order = order;
+                  }
+                  public void OrderDelivery()
+                  {
+                    // Here, we would want to interface with another
+                    // system which actually assigns the task of
+                    // delivery to different persons
+                    // based on location, etc.
+                    Console.WriteLine("Delivering the order");
+                    Console.WriteLine(
+                    "Order with order id as "
+                    + this.order.getOrderId()
+                    + " being delivered to "
+                    + this.order.customer.name);
+                    Console.WriteLine(
+                    "Order is to be delivered to: "
+                    + this.order.customer.address);
+                  }
+                }
+              </code>
+            </pre>
+            <p>Like I said, this isn’t the real world it is a simple example for demonstration only. Again it started with calling order and then display it on console. Finally with the code in Main method</p>
+            <pre>
+              <code>
+                static void Main(string[] args)
+                {
+                  Customers customer01 = new Customers();
+                  customer01.name = "Mostafa";
+                  customer01.address = "Cairo";
+                  Orders order01 = new Orders();
+                  order01.setItemName("Pizza");
+                  order01.quantity = 2;
+                  order01.customer = customer01;
+
+                  order01.prepareOrder();
+
+                  BillCalculation billCalculation
+                    = new BillCalculation(order01);
+                    billCalculation.calculateBill();
+
+                    Delivery deliveryApp = new Delivery(order01);
+                    deliveryApp.OrderDelivery();
+                }
+              </code>
+            </pre>
+            <p>We create customer and name it “Mostafa”. The order is sent to “Cairo”. Then start to create order itself and call prepareOrder Method. Then billing process takes place by calling the billing class finally the delivery happens.
+As you can see from above example, each functionality and responsibility has its own class to exceed it. So for example if we wanted later to add the real bill calculation, we can do it easily in BillCalculation Class without affecting any of other classes.
+</p>
+          </div>
+        </div>
+      </main>
+      <main id="OCP" role="main" style="display:none;" class="pb-3">
+        <div style="margin:8% 15%;">
+          <h2>Open-Closed Principle (OCP)</h2>
+          <br />
+          <p style="font-size:15px;">7 October 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>The Definition</h3>
+            <p>The Open-Closed Principle states as “Software entities such as Classes should be open to extension, but closed for modification”.</p>
+            <p>In simpler words, changing the original code is forbidden in OCP. So how to add new features, we can add new features by either creating new derived classes from original class or access the original class with abstract interface. But at no case change the original class.</p>
+            <h3>Advantages</h3>
+            <p>
+              <ul>
+                <li>If we applied OCP, we won’t entire functionalities again, only the new derived class.</li>
+                <li>No extra work from QA (Quality Assurance) team to test the whole entities, just the new ones.</li>
+                <li>We won’t break the SRP principle, because we kept each class with single responsibility.</li>
+              </ul>
+            </p>
+            <h3>C# (.NET) Example</h3>
+            <p>Continuing with the previous example, let’s add getDiscount method in Delivery Class to explain OCP. We added getDiscount method which see the type of order and based on it the discount is decided.</p>
+            <pre>
+              <code>
+                //Open Closed Prinicple Example
+          public int getDiscount(int totalbill)
+          {
+              //without applying OCP
+              int billAfterDiscount = 0;
+              if (this.order.getItemName() == "Pizza")
+              {
+                  billAfterDiscount = totalbill - (int)(totalbill * 0.2);
+              }
+              else if (this.order.getItemName() == "Pizza with extra cheese")
+              {
+                  billAfterDiscount = totalbill - (int)(totalbill * 0.4);
+              }
+              return billAfterDiscount;
+          }
+              </code>
+            </pre>
+            <p>If order is “Pizza” then 20% discount, if order is “Pizza with extra cheese” then it is 40% discount. This code is bad practice. What if we need to add another type of order let’s say “Pizza with extra pepperoni”. Then we will “Modify” the original code.</p>
+            <p>So the new approach is to create a derived classes called DeliveryExtraCheese & DeliveryExtraPaparoni.</p>
+            <p><<strong>DeliveryExtraCheese:</strong></p>
+            <pre>
+              <code>
+                class DeliveryExtraCheese : Delivery
+      {
+          private Orders order;
+          public DeliveryExtraCheese(Orders order) : base(order)
+          {
+              this.order = order;
+          }
+          //Open Closed Prinicple Example
+          public override int getDiscount(int totalbill)
+          {
+              return base.getDiscount(totalbill) - (int)(totalbill * 0.2);
+          }
+      }
+              </code>
+            </pre>
+            <p><strong>DeliveryExtraPaparoni:</strong></p>
+            <pre>
+              <code>
+                class DeliveryExtraPaparoni : Delivery
+      {
+          private Orders order;
+          public DeliveryExtraPaparoni(Orders order) : base(order)
+          {
+              this.order = order;
+          }
+          //Open Closed Prinicple Example
+          public override int getDiscount(int totalbill)
+          {
+              return base.getDiscount(totalbill) - (int)(totalbill * 0.4);
+          }
+      }
+              </code>
+            </pre>
+            <p><strong>Delivery Class:</strong></p>
+            <pre>
+              <code>
+                class Delivery
+      {
+          private Orders order;
+          public Delivery(Orders order) {
+              this.order = order;
+          }
+          public void OrderDelivery()
+          {
+              // Here, we would want to interface with another
+              // system which actually assigns the task of
+              // delivery to different persons
+              // based on location, etc.
+              Console.WriteLine("Delivering the order");
+              Console.WriteLine(
+                  "Order with order id as "
+                  + this.order.getOrderId()
+                  + " being delivered to "
+                  + this.order.customer.name);
+              Console.WriteLine(
+                  "Order is to be delivered to: "
+                  + this.order.customer.address
+                  + " but after discount is "
+                  + this.getDiscount(this.order.totalBillAmt));
+          }
+
+          //Open Closed Prinicple Example
+          public virtual int getDiscount(int totalbill)
+          {
+       //with applying OCP
+              return totalbill - (int)(totalbill * 0.1);
+          }
+      }
+              </code>
+            </pre>
+            <p>Notes the change in getDiscount method in original Delivery Class. Now if we want to add another order type, we can easily without changing original classes.</p>
+          </div>
+        </div>
+      </main>
+      <main id="LSP" role="main" style="display:none;" class="pb-3">
+        <div style="margin:8% 15%;">
+          <h2>Liskov Substitution Principle</h2>
+          <br />
+          <p style="font-size:15px;">7 October 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>The Definition</h3>
+            <p>The Liskov Substitution principle is substitutability principle in OOP language. It states that if X is base class and Y is derived class form X. then it Y should replace X and no changes occurs. In other words, if we replace Y with X and the code still function the same, then it follows LSP principle.</p>
+            <h3>C# (.NET) Example</h3>
+            <p>First, we create the Apple class with the method GetColor. Then we create the Orange class which inherits the Apple class as well as overrides the GetColor method of the Apple class. The point is that an Orange cannot be replaced by an Apple, which results in printing the color of the apple as Orange as shown in the below code.</p>
+            <pre>
+              <code>
+      public class Apple
+      {
+          public virtual string GetColor()
+          {
+              return "Red";
+          }
+      }
+      public class Orange : Apple
+      {
+          public override string GetColor()
+          {
+              return "Orange";
+          }
+      }
+              </code>
+            </pre>
+            <p>As you can see in the above example, Apple is the base class and Orange is the child class i.e. there is a Parent-Child relationship. So, we can store the child class object in the Parent Reference variable i.e. Apple apple = new Orange(); and when we call the GetColor i.e. apple.GetColor(), then we are getting the color of the Orange not the color of Apple. That means once the child object is replaced i.e. Apple storing the Orange object, the behavior is also changed. This is against the LSP Principle. The Liskov Substitution Principle in C# states that even the child object is replaced with the parent, the behavior should not be changed. So, in this case, if we are getting the color of Apple instead of Orange, then it follows the Liskov Substitution Principle. That means there is some issue with our software design. </p>
+            <p>Let’s modify the previous code to follow the Liskov Substitution Principle. First, we need a generic base class such as Fruit which is going to be the base class for both Apple and Orange. Now you can replace the Fruit class object with its subtypes either Apple and Orage and it will behave correctly. Now, you can see in the below code, we created the super Fruit class as an abstract class with the GetColor abstract method and then the Apple and Orange class inherited from the Fruit class and implement the GetColor method. </p>
+            <pre>
+              <code>
+      abstract class Fruit
+      {
+          public abstract string GetColor();
+      }
+      class Apple : Fruit
+      {
+          public override string GetColor()
+          {
+              return "Red";
+          }
+      }
+      class Orange : Fruit
+      {
+          public override string GetColor()
+          {
+              return "Orange";
+          }
+      }
+              </code>
+            </pre>
+            <p>So this how you achieve LSP.</p>
+          </div>
+        </div>
+      </main>
+      <main id="ISP" role="main" style="display:none;" class="pb-3">
+        <div style="margin:8% 15%;">
+          <h2>Interface Segregation Principle (ISP)</h2>
+          <br />
+          <p style="font-size:15px;">7 October 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>The Definition</h3>
+            <p>The Interface Segregation Principle states as “Clients should not be forced to implement any methods they don’t use. Rather than one fat interface, numerous little interfaces are preferred based on groups of methods with each interface serving one submodule”.</p>
+            <p>In simpler words, it means two things; first, classes shouldn’t implement any methods which isn’t used. Second, as SRP states, even interfaces that implemented in classes should have one responsibility or functionality. Instead of implementing a large (fat) interface with a lot of methods and functionalities.</p>
+            <h3>C# (.NET) Example</h3>
+            <p>Let’s say we have “IShape” interface which as Area & Volume methods. That sound’s simple. We will implement IShape to two classes the first one is Square which will need only one method (Area method), while the other one is Cube which will need both of methods (Area & Volume methods).</p>
+            <pre>
+              <code>
+      public interface IShapes
+      {
+          void Area(string dimensions);
+          void Volume(string dimensions);
+      }
+
+      public class Square: IShapes
+      {
+          public void Area(string dimen)
+          {
+              Console.WriteLine("Calculate Area");
+          }
+
+          public void Volume(string dimen)
+          {
+              throw new NotImplementedException();
+          }
+      }
+
+      public class Cube : IShapes
+      {
+          public void Area(string dimen)
+          {
+              Console.WriteLine("Calculate Area");
+          }
+
+          public void Volume(string dimen)
+          {
+              Console.WriteLine("Calculate Volume");
+          }
+      }
+              </code>
+            </pre>
+            <p>As you can see, this is not applying of Interface Segregation Principle. So what we can do to fix this. We can create two interfaces (I2DShape & I3DShape) instead of one interface (IShape).</p>
+            <pre>
+              <code>
+      public interface I2DShape
+      {
+          void Area(string dimensions);
+      }
+      public interface I3DShape
+      {
+          void Volume(string dimensions);
+      }
+
+      public class Square2D : I2DShape
+      {
+          public void Area(string dimen)
+          {
+              Console.WriteLine("Calculate Area");
+          }
+      }
+
+      public class Cube3D : I3DShape
+      {
+          public void Volume(string dimen)
+          {
+              Console.WriteLine("Calculate Volume");
+          }
+      }
+              </code>
+            </pre>
+            <p>Notes that we had to name Square2D & Cube3D because they already exist in pervious example.
+Now after the applying of ISP, there is no unused method and we also applied SRP principle.
+</p>
+          </div>
+        </div>
+      </main>
+      <main id="DIP" role="main" style="display:none;" class="pb-3">
+        <div style="margin:8% 15%;">
+          <h2>Dependency Inversion Principle (DIP)</h2>
+          <br />
+          <p style="font-size:15px;">7 October 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>The Definition</h3>
+            <p>The Dependency Inversion Principle (DIP) states as “high-level modules/classes should not depend on low-level modules/classes. Both should depend upon abstractions. Secondly, abstractions should not depend upon details. Details should depend upon abstractions”.</p>
+            <p>Let’s explain this, high level classes are classes that depend on other classes. Low level classes are the classes which high classes depend on. So the first rule is no classes depend on other classes. Then what should we do instead. We should you abstraction. Abstraction is basically use interfaces or abstract classes instead of low level classes. The second rule is talking about the abstraction, it says when we use abstractions we shouldn’t design abstract class or interface to get specific input or to produce specific output. If this seems confusing don’t worry, the example will help you understand.</p>
+            <h3>C# (.NET) Example</h3>
+            <p>Let’s first show the code and then explain it.</p>
+            <pre>
+              <code>
+      class CustomerBusinessLogic
+      {
+          public CustomerBusinessLogic()
+          {
+          }
+
+          public string GetCustomerName(int id)
+          {
+              DataAccess _dataAccess = DataAccessFactory.GetDataAccessObj();
+
+              return _dataAccess.GetCustomerName(id);
+          }
+      }
+
+      public class DataAccessFactory
+      {
+          public static DataAccess GetDataAccessObj()
+          {
+              return new DataAccess();
+          }
+      }
+
+      public class DataAccess
+      {
+          public DataAccess()
+          {
+          }
+
+          public string GetCustomerName(int id)
+          {
+              // get it from DB in real app
+              return "Dummy Customer Name";
+          }
+      }
+              </code>
+            </pre>
+            <p>As you can see, CustomerBusinessLogic class depend on DataAccess Class. So CustomerBusinessLogic is high level class/module, while DataAccess is low level class/module. As per DIP, CustomerBusinessLogic (high-level module) should not depend on the concrete DataAccess class (low-level module). Both classes should depend on abstractions, meaning both classes should depend on an interface or an abstract class.</p>
+            <p>So what should interface have? From CustomerBusinessLogic, it uses GetCustomerName method of DataAccess class. </p>
+            <pre>
+              <code>
+      class DIP_CustomerBusinessLogic
+      {
+          ICustomerDataAccess _custDataAccess;
+
+          public DIP_CustomerBusinessLogic()
+          {
+              _custDataAccess = DIP_DataAccessFactory.GetCustomerDataAccessObj();
+          }
+
+          public string GetCustomerName(int id)
+          {
+              return _custDataAccess.GetCustomerName(id);
+          }
+      }
+
+      public interface ICustomerDataAccess
+      {
+          string GetCustomerName(int id);
+      }
+
+      public class CustomerDataAccess : ICustomerDataAccess
+      {
+          public CustomerDataAccess()
+          {
+          }
+
+          public string GetCustomerName(int id)
+          {
+              return "Dummy Customer Name";
+          }
+      }
+
+      public class DIP_DataAccessFactory
+      {
+          public static ICustomerDataAccess GetCustomerDataAccessObj()
+          {
+              return new CustomerDataAccess();
+          }
+      }
+              </code>
+            </pre>
+            <p>We created interface called ICustomerDataAccess which carry only one method GetCustomerName. Then we implemented ICustomerDataAccess to CustomerDataAccess (we changed name from DataAccess to CustomerDataAccess). After that we needed to change DIP_DataAccessFactory (former DataAccessFactory) to fit the abstraction (new interface). Now we change DIP_CustomerBusinessLogic (former CustomerBusinessLogic) to use ICustomerDataAccess instead of old DataAccess class.</p>
+            <p>So now, after implementing DIP, the high level module (DIP_CustomerBusinessLogic) and low level module (CustomerDataAccess) are dependent on abstraction (ICustomerDataAccess) and details depends on abstraction.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="border-top footer">
+        <div class="container">
+            <div style="margin: 5%">
+                <h3 class="footer-Text">To Contact Me:</h3>
+                <ul style="list-style:none;margin:0;padding:0;overflow:hidden;">
+                    <li class="li-myList"><a href="mailto:MostafaShaban4522912@gmail.com"><i class="fab fa-google fa-2x"></i></a></li>
+                    <li class="li-myList"><a href="https://github.com/Mostafa-shaban-mohamed"><i class="fab fa-github fa-2x"></i></a></li>
+                    <li class="li-myList"><a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+
+            <p class="footer-Text">&copy; 2021 - Mostafa Shaaban. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+      //navbar collapse
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      function loadOverViewOnClick(){
+        $("#Overview").show();
+        $("#SRP").hide();
+        $("#OCP").hide();
+        $("#LSP").hide();
+        $("#ISP").hide();
+        $("#DIP").hide();
+      }
+      function loadSRPOnClick(){
+        $("#SRP").show();
+        $("#Overview").hide();
+        $("#OCP").hide();
+        $("#LSP").hide();
+        $("#ISP").hide();
+        $("#DIP").hide();
+      }
+      function loadOCPOnClick(){
+        $("#OCP").show();
+        $("#SRP").hide();
+        $("#Overview").hide();
+        $("#LSP").hide();
+        $("#ISP").hide();
+        $("#DIP").hide();
+      }
+      function loadLSPOnClick(){
+        $("#LSP").show();
+        $("#SRP").hide();
+        $("#OCP").hide();
+        $("#Overview").hide();
+        $("#ISP").hide();
+        $("#DIP").hide();
+      }
+      function loadISPOnClick(){
+        $("#ISP").show();
+        $("#SRP").hide();
+        $("#OCP").hide();
+        $("#LSP").hide();
+        $("#Overview").hide();
+        $("#DIP").hide();
+      }
+      function loadDIPOnClick(){
+        $("#DIP").show();
+        $("#SRP").hide();
+        $("#OCP").hide();
+        $("#LSP").hide();
+        $("#ISP").hide();
+        $("#Overview").hide();
+      }
+    </script>
+  </body>
+</html>
