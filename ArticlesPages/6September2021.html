@@ -15,40 +15,31 @@
   <body>
     <header>
       <!-- navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar">
-            <!-- Collapse -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- Left -->
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a href="../Index.html">Home
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a href="../ArticleList.html" target="_blank">Articles</a>
-                </li>
-              </ul>
-              <!-- Right -->
-              <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item active">
-                  <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/" class="nav-link" target="_blank">
-                    <i style="color:black;" class="fab fa-linkedin-in fa-2x"></i>
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a href="https://github.com/Mostafa-shaban-mohamed" class="nav-link" target="_blank">
-                    <i style="color:black;" class="fab fa-github fa-2x"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-        </nav>
+
+        <div class="topnav" id="myTopnav">
+          <a class="active" href="../Index.html">Home
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+          <a href="../Index.html">
+            Articles
+            <i class="fa fa-book"></i>
+          </a>
+          <div class="right-lnk">
+            <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"
+            target="_blank" class="nav-link" target="_blank">
+              LinkedIn
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Mostafa-shaban-mohamed"
+            class="nav-link" target="_blank">
+              GitHub
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <a class="icon" onclick="myFunction();">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
     </header>
     <div class="container">
       <main role="main" class="pb-3">

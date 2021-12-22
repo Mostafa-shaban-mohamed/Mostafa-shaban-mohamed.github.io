@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Inversion of Control</title>
+      <link rel="stylesheet" href="../wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <script src="https://kit.fontawesome.com/f1a3772513.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../wwwroot/css/articles.css" />
+      <link rel="apple-touch-icon" sizes="180x180" href="../wwwroot/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../wwwroot/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../wwwroot/favicon-16x16.png">
+      <link rel="manifest" href="../wwwroot/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <!-- navbar -->
+
+        <div class="topnav" id="myTopnav">
+          <a class="active" href="../Index.html">Home
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+          <a href="../Index.html">
+            Articles
+            <i class="fa fa-book"></i>
+          </a>
+          <div class="right-lnk">
+            <a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"
+            target="_blank" class="nav-link" target="_blank">
+              LinkedIn
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Mostafa-shaban-mohamed"
+            class="nav-link" target="_blank">
+              GitHub
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <a class="icon" onclick="myFunction();">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
+    </header>
+    <div class="container">
+      <main role="main" class="pb-3">
+        <div style="margin:8% 10%;">
+          <h2>Inversion of Control</h2>
+          <br />
+          <p style="font-size:15px;">30 August 2021 - Written by Mostafa Shaaban Mohamed</p>
+          <div id="image" style="margin:5%;">
+            <img src="../wwwroot/img/ASP.NET-logo.png"
+            alt="How To Become ASP.NET Web Developer"
+            style="max-width:75%; height:auto"/>
+          </div>
+          <div id="ArticleContent" style="margin:5%;">
+            <h3>Introduction:</h3>
+            <p>Inversion of Control (IoC) is a design principle, used to help make application loose coupling (classes less dependable on each other). Here, the word “Control” means the additional responsibilities assigned to classes that already have their own responsibility. As the name suggests, IoC is about inverting the control. It means to let something else take the control. For example, having a driver to drive your car instead of you doing it yourself so you can focus on something else. This is inverting the control of car from you to driver.
+            </p>
+            <h3>The Flow of Control:</h3>
+            <p>
+              In typical console application in C#, the main method in program.cs
+               control the flow of the application. For example,
+               if we build application to get and print data about the user.
+               The main method will be the responsible for controlling the process
+                (the flow) whether we want to display it on console or GUI.
+            </p>
+            <p>
+              IoC can also be applied on dependency objects such as classes. Let’s see the code below to understand.
+            </p>
+            <pre>
+              <code>
+                public class X
+                {
+                  Y y;
+
+                  public X()
+                  {
+                    y = new Y();
+                  }
+
+                  public void Some_Task() {
+	                   y.SomeFunction();
+                   }
+               }
+
+               public class Y {
+                 public void SomeFunction () {
+                   //in real world this will do something
+                 }
+               }
+              </code>
+            </pre>
+            <p>
+              As you can see in the example, Class X needs Class Y to do some task,
+              which means class X is dependent on class Y. We want to change that.
+               IoC means to invert the control. In this case, Class X control the
+               creation of class Y. so we need to invert the control to another class which makes it the only responsibility
+                for this class. Let’s say class Z, so class Z will take control of
+                creating class Y and that will be its only responsibility.
+              While class X can use it to do some task
+            </p>
+            <pre>
+              <code>
+                public class X
+                {
+                  Y y;
+
+                  public X()
+                  {
+                    y = Z.CreateObjectY();
+                  }
+
+                  public void Some_Task() {
+                    y.SomeFunction ();
+                  }
+                }
+
+                public class Z
+                {
+                  public static Y CreateObjectY()
+                  {
+                    return new Y();
+                  }
+                }
+              </code>
+            </pre>
+            <p>
+              From the above code, class X uses class Z to create class B which then passes to class A and do some task. Class X is no longer responsible for creation of class Y, it just uses it to do some task.
+            </p>
+            <p>
+              In OOP design, the classes should not be tightly coupled, it is the opposite it should be design in loosely coupled. It means the change in any class shouldn’t affect the other classes. This way, the application will be maintainable and easy to be tested.
+            </p>
+            <p>
+              To apply loosely coupled, we should use IoC principle and DIP principle
+              together. Just remember, IoC and DIP are principle which mean they are
+              high level guidelines and doesn’t have a implementation details. So we are
+              free to implement. Some of patterns to implement are factory, abstract
+              factory, dependency injection, template method patterns. In the above code
+               we used factory method pattern to apply IoC.
+            </p>
+            <h3>Conclusion:</h3>
+            <p>
+              This is a simple implementation of IoC and the first step towards
+              achieving loosely coupled design. As mentioned before, we will not
+               achieve complete loosely coupled classes by only using IoC. Along
+               with IoC, we also need to use DIP and DI (Dependency Injection).
+            </p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="border-top footer">
+        <div class="container">
+            <div style="margin: 5%">
+                <h3 class="footer-Text">To Contact Me:</h3>
+                <ul style="list-style:none;margin:0;padding:0;overflow:hidden;">
+                    <li class="li-myList"><a href="mailto:MostafaShaban4522912@gmail.com"><i class="fab fa-google fa-2x"></i></a></li>
+                    <li class="li-myList"><a href="https://github.com/Mostafa-shaban-mohamed"><i class="fab fa-github fa-2x"></i></a></li>
+                    <li class="li-myList"><a href="https://www.linkedin.com/in/mostafa-shaaban-538b20180/"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+
+            <p class="footer-Text">&copy; 2021 - Mostafa Shaaban. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
